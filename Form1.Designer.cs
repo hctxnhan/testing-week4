@@ -83,7 +83,7 @@
             this.txtKq.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKq.Location = new System.Drawing.Point(162, 87);
             this.txtKq.Name = "txtKq";
-            this.txtKq.Size = new System.Drawing.Size(100, 26);
+            this.txtKq.Size = new System.Drawing.Size(300, 26);
             this.txtKq.TabIndex = 15;
             this.txtKq.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -105,6 +105,7 @@
             this.txtSo2.Size = new System.Drawing.Size(100, 26);
             this.txtSo2.TabIndex = 13;
             this.txtSo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSo2.Click += txtSo2_Click;
             // 
             // label2
             // 
@@ -124,6 +125,7 @@
             this.txtSo1.Size = new System.Drawing.Size(100, 26);
             this.txtSo1.TabIndex = 11;
             this.txtSo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSo1.Click += txtSo1_Click;
             // 
             // label1
             // 

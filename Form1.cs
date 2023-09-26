@@ -13,6 +13,7 @@ namespace Buoi07_TinhToan3
     public partial class Form1 : Form
     {
         public Form1()
+        
         {
             InitializeComponent();
         }
@@ -36,15 +37,47 @@ namespace Buoi07_TinhToan3
         {
             //lấy giá trị của 2 ô số
             double so1, so2, kq = 0;
-            so1 = double.Parse(txtSo1.Text);
-            so2 = double.Parse(txtSo2.Text);
+            try {
+                so1 = double.Parse(txtSo1.Text);
+            }
+            catch (Exception e) {
+                txtSo1.Focus();
+                txtSo1.SelectAll();
+                return;
+            }
+            try {
+                so2 = double.Parse(txtSo2.Text);
+            }
+            catch (Exception e) {
+                txtSo2.Focus();
+                txtSo2.SelectAll();
+                return;
+            }
             //Thực hiện phép tính dựa vào phép toán được chọn
             if (radCong.Checked) kq = so1 + so2;
             else if (radTru.Checked) kq = so1 - so2;
             else if (radNhan.Checked) kq = so1 * so2;
-            else if (radChia.Checked && so2 != 0) kq = so1 / so2;
+            else if (radChia.Checked) {
+                if (so2 == 0) {
+                    MessageBox.Show("Không thể chia một số cho 0 !", MessageBoxButtons.Yes);
+                    txtSo2.Focus();
+                }
+                else kq = so1 / so2;
+            }
             //Hiển thị kết quả lên trên ô kết quả
             txtKq.Text = kq.ToString();
+        }
+
+        private void txtSo1_Click(object sender, EventArgs e)
+        {
+            txtSo1.Focus();
+            txtSo1.SelectAll();
+        }
+
+        private void txtSo2_Click(object sender, EventArgs e)
+        {
+            txtSo2.Focus();
+            txtSo2.SelectAll();
         }
     }
 }
